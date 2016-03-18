@@ -75,6 +75,14 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::resource('/articles','PostController');
 
+    // Route pour aller vers le profile et puis l'éditer
+    Route::get('/profile', array('as'=>'profile','before'=>'auth','uses'=>'ProfileController@getProfile'));
+    Route::get('/editProfile', array('as'=>'editProfile','before'=>'auth','uses'=>'ProfileController@editProfile'));
+
+       //Modification du Profile
+        Route::post('/updateProfile', array('as'=>'updateProfile','before'=>'auth','uses'=>'EditProfileController@updatePro'));
+
+
 
     });
 

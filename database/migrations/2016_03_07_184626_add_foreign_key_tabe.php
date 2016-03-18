@@ -15,7 +15,7 @@ class AddForeignKeyTabe extends Migration
         Schema::table('comments', function (Blueprint $table) {
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('post_id')->references('id')->on('posts');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            //$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
